@@ -89,7 +89,7 @@
 - passwd cameron rootpasswd
 	*I edit the sudoers file to remove the # next to the wheel group*
 ### GUI
-	*I used LXDE as my GUI*
+	I used LXDE as my GUI
 - pacman -S lxde-gtk3
 - systemctl start lxdm.service
 - systemctl enable lxdm.service
