@@ -46,6 +46,7 @@
 - cat /mnt/etc/fstab 
 	*To check the file*
 - arch-chroot /mnt
+- 	*Brings you into the mnt folder with root privledges this is where you configure the system.*
 - ln -sf /usr/share/zoneinfo/America/Detroit /etc/localtime
 - hwclock --systohc
 	*Selecting time zone for the system*
