@@ -1,4 +1,4 @@
-### Arch Install 
+# Arch Linux Install
 
 ## Setting up Internet
 - dhcpcd
@@ -13,19 +13,23 @@
 ## fdisk
 - fdisk -l finds /dev/sda
 - cfdisk /dev/sda and select gpt mode because its compatiable with UFEI mode
+- Select gpt and create 2 partions in EFI mode(500M) and the larger one in Linux LVM(rest of space).
 
 ## Format Partitions
 	*I had problems with the original method so I had to use Linux LVM because it was the only method that would load up my GUI and pass through the boot process this fix took hours to find.
 - pvcreate --dataalignment 1m /dev/sda2
 - vgcreate volgroup0 /dev/sda2
-- lvcreate -L 1GB volgroup0 -n lv_root
+- lvcreate -L 5GB volgroup0 -n lv_root
 - lvcreate -l 100%FREE volgroup0 -n lv_home
+	*Creates 2 groups in the linux lvm partition*
 - modprobe dm_mod
 - vgscan
 	*checks to see if the commands worked properly*
 - vgchange -ay
+- mkfs.fat -F32 /dev/sda1
 - mkfs.ext4 /dev/volgroup0/lv_root
 - mkfs.ext4 /dev/volgroup0/lv_home
+	*Formats files to mkfs*
 
 ## Mount File Systems
 - mount /dev/volgroup0/lv_root /mnt
@@ -42,8 +46,9 @@
 - cat /mnt/etc/fstab 
 	*To check the file*
 - arch-chroot /mnt
-- ln -sf /usr/share/zoneinfo/US/Central/Tulsa /etc/localtime
+- ln -sf /usr/share/zoneinfo/America/Detroit /etc/localtime
 - hwclock --systohc
+	*Selecting time zone for the system*
 - nano /etc/mkinitcpio.conf
 - mkinitcpio -p linux
 
@@ -55,6 +60,7 @@
 ## Network Config
 - pacman -S networkmanager
 - systemctl enable NetworkManager
+	*Forces it to run Network Manager on startup*
 
 ## Root Password
 - passwd
@@ -72,17 +78,21 @@
 - grub-mkconfig -o /boot/grub/grub.cfg
 - umount -a
 - reboot
+	*After restart system should reboot and ask you for your login if it worked*
 
 ## Other
--pacman -S openssh
--useradd -m -g users -G wheel cameron
--useradd -m -g users -G wheel codi
--passwd codi GraceHopper1906
--pacman -S sudo
+### Creating users
+- useradd -m -g users -G wheel cameron
+- useradd -m -g users -G wheel codi
+- passwd codi GraceHopper1906
+- passwd cameron rootpasswd
 	*I edit the sudoers file to remove the # next to the wheel group*
+### GUI
 	*I used LXDE as my GUI*
--pacman -S lxde-gtk3
--systemctl start lxdm.service
--systemctl enable lxdm.service
--pacman -S firefox 
+- pacman -S lxde-gtk3
+- systemctl start lxdm.service
+- systemctl enable lxdm.service
+- pacman -S firefox 
 	*I also installed wine to be able to install putty to my virtual machine so it can install .exe files*
+- pacman -S openssh
+	*So I can use ssh on my system to connect to the class gateway.*
