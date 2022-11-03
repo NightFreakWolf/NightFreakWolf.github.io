@@ -97,3 +97,5 @@
 	*I also installed wine to be able to install putty to my virtual machine so it can install .exe files*
 - pacman -S openssh
 	*So I can use ssh on my system to connect to the class gateway.*
+
+![linux](https://user-images.githubusercontent.com/49764141/199751512-9b8157c3-9eb9-4687-8683-b01614182285.jpg)
