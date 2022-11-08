@@ -1,5 +1,5 @@
 ### Downloading Docker Files
-```docker pull ghcr.io/secure-compliance-solutions-llc/gvm-docker:debian-master-data-full```
+- ```docker pull ghcr.io/secure-compliance-solutions-llc/gvm-docker:debian-master-data-full```
 - Use this command to install the files needed before running the second command to install docker Hub.
 ```docker pull securecompliance/gvm:debian-master-data-full```
 * This will ensure you are currently running the updated version of docker.
