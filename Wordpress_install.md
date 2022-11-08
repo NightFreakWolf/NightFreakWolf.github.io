@@ -49,5 +49,4 @@ volumes:
 ``docker ps```
 -Now you just follow along with the admin set up and fill out whatever information you need to but wordpress is set up
 -To turn off the WordPress database use the command.
-```docker-compose down
-```
+```docker-compose down```
