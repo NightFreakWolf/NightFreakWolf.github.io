@@ -8,7 +8,7 @@
 ```git clone https://github.com/aschmelyun/docker-compose-wordpress```
 - After run the command
 ```docker-compose up -d --build site```
--Go to the docker-compose.yml file and change it to this 
+- Go to the docker-compose.yml file and change it to this 
 ```services:
   db:
     # We use a mariadb image which supports both amd64 & arm64 architecture
