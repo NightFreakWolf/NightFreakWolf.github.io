@@ -24,7 +24,8 @@
 - ```mkdir -p ~/wireguard/config/```
 - ```nano ~/wireguard/docker-compose.yml```
 - After you nano the file paste the following into the file.
-- ```version: '3.8'
+- ```
+version: '3.8'
 services:
   wireguard:
     container_name: wireguard
@@ -52,7 +53,8 @@ services:
       - NET_ADMIN
       - SYS_MODULE
     sysctls:
-      - net.ipv4.conf.all.src_valid_mark=1```
+      - net.ipv4.conf.all.src_valid_mark=1
+      ```
 - After running all these commands docker-compose should work on your droplet machine.
 - ```cd ~/wiregaurd/
   docker-compose up -d```
