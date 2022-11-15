@@ -64,3 +64,9 @@ cd ~/wiregaurd/
 - ```docker-compose logs -f wiregaurd```
 - Install the WireGuard app on your phone and scan the QR code and now you are connected with a VPN :)
 - To connect on your PC navigate to the peer_pc1.conf file and copy the text in the file and paste it into the "Add empty tunnel option"
+### Images of VPN working
+![IPLeak](https://user-images.githubusercontent.com/49764141/201982923-b49f2917-f2cb-4b5d-a063-4d97d8c9ac74.jpg)
+![IPLeakVPN](https://user-images.githubusercontent.com/49764141/201982960-a6c0a22b-cce1-45f3-a4c0-6fd464f7d95f.jpg)
+![IMG_4626](https://user-images.githubusercontent.com/49764141/201983394-79b5d6b1-3d1e-4bf5-ad3d-0ab10e58ace0.jpg)
+![IMG_4625](https://user-images.githubusercontent.com/49764141/201983408-a0066673-b924-414c-87b5-2a4e78591b63.jpg)
+
