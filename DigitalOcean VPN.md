@@ -50,7 +50,7 @@ services:
       - NET_ADMIN
       - SYS_MODULE
     sysctls:
-      - net.ipv4.conf.all.src_valid_mark=1 ```
+      - net.ipv4.conf.all.src_valid_mark=1```
 - After running all these commands docker-compose should work on your droplet machine.
 - ```cd ~/wiregaurd/
   docker-compose up -d```
