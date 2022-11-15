@@ -4,12 +4,12 @@
 - Install anything necessary for docker to install. Then type in the following commands to get docker installed onto your virtual machine.
 ```sudo apt install apt-transport-https ca-certificates curl software-properties-common -y```
 - ```curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -```
-- ```
+```
   sudo add-apt-repository \ 
   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) \
   stable
-  ```
+```
 - Use this command to switch you to the correct repo.
 - ```apt-cache policy docker-ce```
 - The command to install the docker-compose part.
