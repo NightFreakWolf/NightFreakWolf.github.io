@@ -56,9 +56,11 @@ services:
       - net.ipv4.conf.all.src_valid_mark=1
 ```
 - After running all these commands docker-compose should work on your droplet machine.
-- ```cd ~/wiregaurd/
-  docker-compose up -d```
-  - this brings your WireGaurd container up and now your VPN should be running.
-  - ```docker-compose logs -f wiregaurd```
-  - Install the WireGuard app on your phone and scan the QR code and now you are connected with a VPN :)
-  - To connect on your PC navigate to the peer_pc1.conf file and copy the text in the file and paste it into the "Add empty tunnel option"
+```
+cd ~/wiregaurd/
+  docker-compose up -d
+```
+- this brings your WireGaurd container up and now your VPN should be running.
+- ```docker-compose logs -f wiregaurd```
+- Install the WireGuard app on your phone and scan the QR code and now you are connected with a VPN :)
+- To connect on your PC navigate to the peer_pc1.conf file and copy the text in the file and paste it into the "Add empty tunnel option"
